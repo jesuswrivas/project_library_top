@@ -1,3 +1,9 @@
-*{
+/* *{
     outline: 1px solid red;
+} */
+
+.custom-button {
+
+    width: 100%;
+
 }

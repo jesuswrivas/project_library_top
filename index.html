@@ -10,19 +10,34 @@
 
 
 <body>
-<div class="container-fluid">  
-   <div class="row">
-    <div class="col">
-         <h1>Library</h1>
-    </div>
-   </div>
 
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Library</span>
+    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#bookModalForm">
+      Add New Book
+      </button>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid">  
+ 
    <div class="row">
     <div class="col">
-  
-        <div class="container w-25 p-5 card">
-            <h5 class="text-center mb-5">Enter book info</h5>
-            <form>
+
+ 
+
+      <div id="bookModalForm" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content p-2">
+            <div class="modal-header">
+              <h5 class="modal-title">Enter book info</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
                 <div class="mb-3">
                   <label for="book-input" class="form-label">Book Title</label>
                   <input type="text" name="title" class="form-control" id="book-input" aria-describedby="emailHelp">
@@ -48,14 +63,22 @@
                     </label>
                 </div>
                 
-                <button type="submit" class="btn btn-primary mt-3" id="book-submit-btn">Submit</button>
               </form>
+            
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" id="book-submit-btn">Submit</button>
+            </div>
+          </div>
         </div>
+      </div>
+           
 
     </div>
    </div>
 
-
+   
    <div class="row">
     <div class="col mt-5">
         <h5 class="text-center">Your books</h5>
@@ -71,7 +94,9 @@
 
 
 </div>
-  
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="main.js"> </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 
-book_1 = new Book("Harry Potter 1", "JK Rowling", 500, true)
-let myLibrary = [book_1];
+
+let myLibrary = [];
 let submitButton = document.querySelector("#book-submit-btn")
 
 

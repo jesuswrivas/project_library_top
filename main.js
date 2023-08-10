@@ -102,7 +102,7 @@
         //Function to be called on submitButton
 
         addBookToLibrary(e) {
-            console.log("trigger")
+            
             e.preventDefault() 
         
             if (!AppAux.checkInputs()){
@@ -159,10 +159,11 @@
         //Books container is an empty div in the main page. We will generate all the book cards based in the books_array
         ShowBooks(){
 
-            if (!this.books){
-                console.log/"showing nothing"
-                return
-            } 
+            if (this.books.length === 0){
+                console.log("showing nothing");
+                return;
+            }
+            
 
             let books_container = document.querySelector("#books-container")
             //The div is cleaned first to prevent old records to be grouped
@@ -188,8 +189,17 @@
             this.name = name;
             this.author = author;
             this.pages = pages;
-            this.hasBeenRead = hasBeenRead;
+            this._hasBeenRead = hasBeenRead;
         }
+
+        set hasBeenRead(boolean){
+            this._hasBeenRead = boolean
+        }
+
+        get hasBeenRead(){
+            return this._hasBeenRead
+        }
+        
         
         info(){
             let message
@@ -201,14 +211,7 @@
             return `${this.name} was written by ${this.author}, it has ${this.pages} pages. ${message}`
         }
             
-        set hasBeenRead(boolean){
-            this._hasBeenRead = boolean
-        }
-
-        get hasBeenRead(){
-            return this._hasBeenRead
-        }
-        
+      
         readChange(){
             this.hasBeenRead= !this.hasBeenRead
         }
@@ -221,6 +224,6 @@
     myLibrary.ShowBooks()
     myLibrary.addFeatureSubmitButton()
 
-    
+
 
 })()
